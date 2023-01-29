@@ -1,0 +1,183 @@
+<!--html注释用<!-- 文字  js单行// 多行/*文字*/ css/*这是单行注释*/ /*这是多行注释*/-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">	<!--可使用中文字符-->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>程成的编程学习笔记</title>	<!--标题-->
+		
+		<style>
+		* {
+		    box-sizing: border-box;
+		}
+		
+		/* body 样式 */
+		body {
+		    font-family: Arial;
+		    margin: 0;
+		}
+		
+		/* 标题 */
+		.header {
+		    padding: 80px;
+		    text-align: center;
+		    background: #55aaff;
+		    color: white;
+		}
+		
+		/* 标题字体加大 */
+		.header h1 {
+		    font-size: 40px;
+		}
+		
+		/* 导航 */
+		.navbar {
+		    overflow: hidden;
+		    background-color: #333;
+		}
+		
+		/* 导航栏样式 */
+		.navbar a {
+		    float: left;
+		    display: block;
+		    color: white;
+		    text-align: center;
+		    padding: 14px 20px;
+		    text-decoration: none;
+		}
+		
+		/* 右侧链接*/
+		.navbar a.right {
+		    float: right;
+		}
+		
+		/* 鼠标移动到链接的颜色 */
+		.navbar a:hover {
+		    background-color: #ddd;
+		    color: black;
+		}
+		
+		/* 列容器 */
+		.row {  
+		    display: -ms-flexbox; /* IE10 */
+		    display: flex;
+		    -ms-flex-wrap: wrap; /* IE10 */
+		    flex-wrap: wrap;
+		}
+		
+		/* 创建两个列 */
+		/* 边栏 */
+		.side {
+		    -ms-flex: 30%; /* IE10 */
+		    flex: 30%;
+		    background-color: #f1f1f1;
+		    padding: 20px;
+		}
+		
+		/* 主要的内容区域 */
+		.main {   
+		    -ms-flex: 70%; /* IE10 */
+		    flex: 70%;
+		    background-color: white;
+		    padding: 20px;
+		}
+		
+		/* 测试图片 */
+		.fakeimg {
+		    background-color: #aaa;
+		    width: 100%;
+		    padding: 20px;
+		}
+		
+		/* 底部 */
+		.footer {
+		    padding: 20px;
+		    text-align: center;
+		    background: #ddd;
+		}
+		
+		/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+		@media screen and (max-width: 700px) {
+		    .row {   
+		        flex-direction: column;
+		    }
+		}
+		
+		/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+		@media screen and (max-width: 400px) {
+		    .navbar a {
+		        float: none;
+		        width: 100%;
+		    }
+		}
+		
+		body {
+		    cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Nor.cur), auto;
+		}
+		 
+		a {
+		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Ayu.cur), auto;
+		}
+		 
+		a:active {
+		    cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Work.cur), alias;
+		}
+		 
+		p {
+		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Texto.cur), auto;
+		}
+		 
+		span{
+		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/no.cur), auto;
+		
+		
+		*{margin: 0;padding: 0;font-family: 微软雅黑; font-size: 20px}
+		
+			body{margin: 0}
+		
+			a{color: black; text-decoration: none }
+		
+			ul{padding: 0 10px 0 10px; list-style-type: none}
+		
+		        #zero{width: 100%; height: 30px; background: #ebebeb}
+		
+			#zero li{float: left}
+		
+			#zero1{margin-left: 1050px;display: block}
+		
+			#zero2{margin-left: 1050px;display: none}
+
+		</style>
+	</head>
+	<body>
+		<div class="navbar">
+			<a href="index.html">主页</a>
+			<a href="微信公众号文章传送门.html">微信公众号文章传送门</a>
+			<a href="联系我们.html"class="right">联系我们</a>
+		</div>
+		<div class="header">
+			<h1 align="center">程成的编程学习笔记</h1>	<!--标题1并居中-->
+			<hr />	<!--水平线-->
+			<p align="center">Hello，大家好，我是一名12岁小学生，我很热爱电脑编程等关于计算机的知识，在这里我会和大家一起学习，并共享我的笔记，谢谢大家<br />注：此网站未完成，以后会多多更新，每次更新会写更新内容<br />微信公众号：博猿信息</p>
+		</div>
+		<div class="main">
+		      <h2>本站初始版本0.0.0</h2>
+		      <h3>现已有模块功能：</h3>
+			  <code>
+					<strong>
+						1.主页：点击导航栏上的此按钮可以返回主页<br />
+						2.微信公众号传送门：点击导航栏上的此按钮可以前往博猿信息公众号里的文章<br />
+						3.联系我们：点击导航栏上的此按钮可以前往联系我们页面<br />
+						4.鼠标指针样式
+					</strong>
+			  </code>
+		      
+		</div>
+		
+
+		<div class="footer">
+			<h2>Copyright © 2023 程成. All Rights Reserved.</h2>
+		</div>
+
+	</body>
+</html>
