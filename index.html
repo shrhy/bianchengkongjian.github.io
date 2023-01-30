@@ -7,6 +7,20 @@
 		<title>程成的编程学习笔记</title>	<!--标题-->
 		
 		<style>
+		/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+		@media screen and (max-width: 700px) {
+		    .row {   
+		        flex-direction: column;
+		    }
+		}
+		
+		/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+		@media screen and (max-width: 400px) {
+		    .navbar a {
+		        float: none;
+		        width: 100%;
+		    }
+		}	
 		* {
 		    box-sizing: border-box;
 		}
@@ -96,20 +110,7 @@
 		    background: #ddd;
 		}
 		
-		/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
-		@media screen and (max-width: 700px) {
-		    .row {   
-		        flex-direction: column;
-		    }
-		}
-		
-		/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
-		@media screen and (max-width: 400px) {
-		    .navbar a {
-		        float: none;
-		        width: 100%;
-		    }
-		}
+
 		
 		body {
 		    cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Nor.cur), auto;
@@ -126,7 +127,7 @@
 		p {
 		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Texto.cur), auto;
 		}
-		 
+
 		span{
 		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/no.cur), auto;
 		
@@ -147,14 +148,32 @@
 		
 			#zero2{margin-left: 1050px;display: none}
 
+	
+		</style>
+		<style>
+		.goq-top {
+			position: fixed;	        /* 设置fixed固定定位 */
+			bottom: 20px;		/* 距离浏览器窗口下边框20px */
+			right: 20px;		/* 距离浏览器窗口右边框20px */
+			}
+		.goq-top a {
+			display: block;			/* 将<a>标签设为块元素，用于美化样式 */
+			text-decoration: none;		/* 取消超链接下画线 */
+			border: 1px solid #c3c3c3;		/* 设置边框样式 */
+			padding: 10px 20px;			/* 设置内边距 */
+			border-radius: 5px;			/* 设置圆角矩形 */
+			letter-spacing: 2px;		/* 设置文字间距 */
+			}
+
 		</style>
 	</head>
 	<body>
-		<div class="navbar">
-			<a href="index.html">主页</a>
-			<a href="微信公众号文章传送门.html">微信公众号文章传送门</a>
-			<a href="联系我们.html"class="right">联系我们</a>
-		</div>
+			<div class="navbar">
+				<a href="index.html">主页</a>
+				<a href="微信公众号文章传送门.html">微信公众号文章传送门</a>
+				<a href="软件安装包.html">软件安装包</a>
+				<a href="联系我们.html"class="right">联系我们</a>
+			</div>
 		<div class="header">
 			<h1 align="center">程成的编程学习笔记</h1>	<!--标题1并居中-->
 			<hr />	<!--水平线-->
@@ -171,13 +190,14 @@
 						4.鼠标指针样式
 					</strong>
 			  </code>
-		      
 		</div>
-		
+		<div class="goq-top">
+			<a href="#">返回<br />顶部</a>
+		</div>
 
 		<div class="footer">
 			<h2>Copyright © 2023 程成. All Rights Reserved.</h2>
 		</div>
 
 	</body>
-</html>
+</html>  
