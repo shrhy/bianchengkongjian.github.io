@@ -4,13 +4,26 @@
 		<meta charset="utf-8">
 		<title>联系我们</title>
 		<style>
+		/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
+		@media screen and (max-width: 700px) {
+		    .row {   
+		        flex-direction: column;
+		    }
+		}
+		
+		/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
+		@media screen and (max-width: 400px) {
+		    .navbar a {
+		        float: none;
+		        width: 100%;
+		    }
+		}	
 		* {
 		    box-sizing: border-box;
 		}
 		
 		/* body 样式 */
 		body {
-			background: #55aaff;
 		    font-family: Arial;
 		    margin: 0;
 		}
@@ -94,20 +107,7 @@
 		    background: #ddd;
 		}
 		
-		/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
-		@media screen and (max-width: 700px) {
-		    .row {   
-		        flex-direction: column;
-		    }
-		}
-		
-		/* 响应式布局 - 在屏幕设备宽度尺寸小于 400px 时, 让导航栏目上下堆叠显示 */
-		@media screen and (max-width: 400px) {
-		    .navbar a {
-		        float: none;
-		        width: 100%;
-		    }
-		}
+
 		
 		body {
 		    cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Nor.cur), auto;
@@ -124,7 +124,7 @@
 		p {
 		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Texto.cur), auto;
 		}
-		 
+
 		span{
 		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/no.cur), auto;
 		
@@ -144,20 +144,30 @@
 			#zero1{margin-left: 1050px;display: block}
 		
 			#zero2{margin-left: 1050px;display: none}
-
 		</style>
+	
 	</head>
 	<body>
 		<div class="navbar">
 			<a href="index.html">主页</a>
 			<a href="微信公众号文章传送门.html">微信公众号文章传送门</a>
+			<a href="软件安装包.html">软件安装包</a>
 			<a href="联系我们.html"class="right">联系我们</a>
+			
 		</div>
-		<h1 align="center">联系我们</h1>
-		<h2>方式一：</h2>
-		<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱联系我们：<strong>boyuanxinxi2023@163.com</strong></p>
-		<h1 align="center">暂无其他方式</h1>
+		<div class="header">
+			<h1 align="center">联系我们</h1>	<!--标题1并居中-->
+			<hr />	<!--水平线-->
+			<h2 align="left">方式一：</h2>
+			<p align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;邮箱联系我们：<strong>boyuanxinxi2023@163.com</strong>
+			</p>
+			<h1 align="center">暂无其他方式</h1>
+		</div>
+		<div class="footer">
+			<h2>Copyright © 2023 程成. All Rights Reserved.</h2>
+		</div>
+		
 	</body>
 </html>
