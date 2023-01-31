@@ -1,10 +1,9 @@
-<!--html注释用<!-- 文字  js单行// 多行/*文字*/ css/*这是单行注释*/ /*这是多行注释*/-->
 <!DOCTYPE html>
 <html>
 	<head>
-		<meta charset="UTF-8">	<!--可使用中文字符-->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>程成的编程学习笔记</title>	<!--标题-->
+		<meta charset="utf-8">
+		<title>程成-文本编辑器</title>
+		<link href="https://unpkg.com/@wangeditor/editor@latest/dist/css/style.css" rel="stylesheet">
 		
 		<style>
 		/* 响应式布局 - 在屏幕设备宽度尺寸小于 700px 时, 让两栏上下堆叠显示 */
@@ -110,7 +109,7 @@
 		    background: #ddd;
 		}
 		
-
+		
 		
 		body {
 		    cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Nor.cur), auto;
@@ -127,7 +126,7 @@
 		p {
 		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/Texto.cur), auto;
 		}
-
+		
 		span{
 		cursor: url(https://cdn.jsdelivr.net/gh/mirai-mamori/web-img/img/no.cur), auto;
 		
@@ -147,58 +146,63 @@
 			#zero1{margin-left: 1050px;display: block}
 		
 			#zero2{margin-left: 1050px;display: none}
-
-	
+		
+			
 		</style>
 		<style>
-		.goq-top {
-			position: fixed;	        /* 设置fixed固定定位 */
-			bottom: 20px;		/* 距离浏览器窗口下边框20px */
-			right: 20px;		/* 距离浏览器窗口右边框20px */
-			}
-		.goq-top a {
-			display: block;			/* 将<a>标签设为块元素，用于美化样式 */
-			text-decoration: none;		/* 取消超链接下画线 */
-			border: 1px solid #c3c3c3;		/* 设置边框样式 */
-			padding: 10px 20px;			/* 设置内边距 */
-			border-radius: 5px;			/* 设置圆角矩形 */
-			letter-spacing: 2px;		/* 设置文字间距 */
-			}
-
+		  #editor—wrapper {
+		    border: 1px solid #ccc;
+		    z-index: 100; /* 按需定义 */
+		  }
+		  #toolbar-container { 
+			  border-bottom: 1px solid #ccc; 
+			  }
+		  #editor-container { 
+			  height: 500px; 
+		  }
 		</style>
 	</head>
 	<body>
-			<div class="navbar">
-				<a href="index.html">主页</a>
-				<a href="文本编辑器.html">文本编辑器</a>
-				<a href="微信公众号文章传送门.html">微信公众号文章传送门</a>
-				<a href="软件安装包.html">软件安装包</a>
-				<a href="联系我们.html"class="right">联系我们</a>
-			</div>
-		<div class="header">
-			<h1 align="center">程成的编程学习笔记</h1>	<!--标题1并居中-->
-			<hr />	<!--水平线-->
-			<p align="center">Hello，大家好，我是一名12岁小学生，我很热爱电脑编程等关于计算机的知识，在这里我会和大家一起学习，并共享我的笔记，谢谢大家<br />注：此网站未完成，以后会多多更新，每次更新会写更新内容<br />微信公众号：博猿信息</p>
+		<div id="editor—wrapper">
+		    <div id="toolbar-container"><!-- 工具栏 --></div>
+		    <div id="editor-container"><!-- 编辑器 --></div>
 		</div>
-		<div class="main">
-		      <h2>本站初始版本0.0.0</h2>
-		      <h3>现已有模块功能：</h3>
-			  <code>
-					<strong>
-						1.主页：点击导航栏上的此按钮可以返回主页<br />
-						2.微信公众号传送门：点击导航栏上的此按钮可以前往博猿信息公众号里的文章<br />
-						3.联系我们：点击导航栏上的此按钮可以前往联系我们页面<br />
-						4.鼠标指针样式
-					</strong>
-			  </code>
-		</div>
-		<div class="goq-top">
-			<a href="#">返回<br />顶部</a>
-		</div>
-
+		<script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+		<script>
+		    var E = window.wangEditor; // 全局变量
+		</script>
+		<script src="https://unpkg.com/@wangeditor/editor@latest/dist/index.js"></script>
+		<script>
+		const { createEditor, createToolbar } = window.wangEditor
+		
+		const editorConfig = {
+		    placeholder: 'Type here...',
+		    onChange(editor) {
+		      const html = editor.getHtml()
+		      console.log('editor content', html)
+		      // 也可以同步到 <textarea>
+		    }
+		}
+		
+		const editor = createEditor({
+		    selector: '#editor-container',
+		    html: '<p><br></p>',
+		    config: editorConfig,
+		    mode: 'default', // or 'simple'
+		})
+		
+		const toolbarConfig = {}
+		
+		const toolbar = createToolbar({
+		    editor,
+		    selector: '#toolbar-container',
+		    config: toolbarConfig,
+		    mode: 'default', // or 'simple'
+		})
+		</script>
+		<p><strong>声明：本编辑器引用的是wangEditor5</strong></p>
 		<div class="footer">
 			<h2>Copyright © 2023 程成. All Rights Reserved.</h2>
 		</div>
-
 	</body>
-</html>  
+</html>
